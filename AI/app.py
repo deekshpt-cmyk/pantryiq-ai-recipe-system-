@@ -1,6 +1,6 @@
 import streamlit as st
-from detect import detect_ingredients
-from recipe_engine import recommend
+from AI.detect import detect_ingredients
+from AI.recipe_engine import recommend
 from PIL import Image
 
 st.title("PantryIQ 🍳")

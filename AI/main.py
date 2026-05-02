@@ -1,5 +1,5 @@
-from detect import detect_ingredients
-from recipe_engine import recommend
+from AI.detect import detect_ingredients
+from AI.recipe_engine import recommend
 
 img = "test.jpg"
 
