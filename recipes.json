@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Fruit Bowl",
+    "ingredients": ["apple", "banana"],
+    "time": 5
+  },
+  {
+    "name": "Veg Salad",
+    "ingredients": ["carrot", "broccoli"],
+    "time": 10
+  }
+]
