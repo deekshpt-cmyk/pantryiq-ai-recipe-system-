@@ -688,14 +688,31 @@ def show_home():
 
     # ── Preview ───────────────────────────────────────────────────
     if uploaded:
+        import tempfile, os
+        from ai.detect import detect_ingredients
+        from ai.recipe_engine import recommend
+
         st.markdown('<div class="preview-outer"><div class="preview-card">', unsafe_allow_html=True)
         st.markdown('<div class="preview-label">📸 Uploaded image</div>', unsafe_allow_html=True)
         _, img_col, _ = st.columns([1, 2, 1])
         with img_col:
             for file in uploaded:
-                st.image(file,width="stretch")
+                st.image(file, use_column_width=True)
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
+            tmp.write(uploaded[0].getbuffer())
+            tmp_path = tmp.name
+
+        with st.spinner("Analysing ingredients..."):
+            ingredients = detect_ingredients(tmp_path)
+        os.unlink(tmp_path)
+
+        st.session_state["detected_ingredients"] = ingredients
+        st.session_state["recipes"] = recommend(ingredients)
+
+        detected_str = ", ".join(ingredients) if ingredients else "nothing recognised"
         st.markdown(
-            '<div class="preview-ok">✅ &nbsp;Image received — analysing ingredients…</div>',
+            f'<div class="preview-ok">✅ &nbsp;Detected: {detected_str}</div>',
             unsafe_allow_html=True,
         )
         st.markdown('</div></div>', unsafe_allow_html=True)
