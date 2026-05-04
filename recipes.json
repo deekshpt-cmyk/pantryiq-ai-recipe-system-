@@ -8,5 +8,55 @@
     "name": "Veg Salad",
     "ingredients": ["carrot", "broccoli"],
     "time": 10
+  },
+  {
+    "name": "Banana Smoothie",
+    "ingredients": ["banana", "milk"],
+    "time": 5
+  },
+  {
+    "name": "Apple Pie",
+    "ingredients": ["apple", "flour", "sugar"],
+    "time": 45
+  },
+  {
+    "name": "Grilled Chicken",
+    "ingredients": ["chicken", "salt", "pepper"],
+    "time": 25
+  },
+  {
+    "name": "Pasta Carbonara",
+    "ingredients": ["pasta", "egg", "cheese", "bacon"],
+    "time": 20
+  },
+  {
+    "name": "Tomato Soup",
+    "ingredients": ["tomato", "onion", "garlic"],
+    "time": 30
+  },
+  {
+    "name": "Caesar Salad",
+    "ingredients": ["lettuce", "cheese", "chicken"],
+    "time": 15
+  },
+  {
+    "name": "Stir Fry",
+    "ingredients": ["broccoli", "carrot", "onion"],
+    "time": 15
+  },
+  {
+    "name": "Sandwich",
+    "ingredients": ["bread", "cheese", "tomato"],
+    "time": 5
+  },
+  {
+    "name": "Pizza",
+    "ingredients": ["cheese", "tomato", "bread"],
+    "time": 30
+  },
+  {
+    "name": "Orange Juice",
+    "ingredients": ["orange"],
+    "time": 2
   }
 ]
