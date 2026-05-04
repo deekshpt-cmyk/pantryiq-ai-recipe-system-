@@ -1,7 +1,17 @@
 from ultralytics import YOLO
 import cv2
+import os
+import streamlit as st
 
-model = YOLO("yolov8n.pt")
+# Use cached model loading to prevent reloading on every Streamlit rerun
+@st.cache_resource
+def load_model():
+    # Model file is in the parent directory
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    model_path = os.path.join(base_dir, "yolov8n.pt")
+    return YOLO(model_path)
+
+model = load_model()
 
 LABEL_MAP = {
     "banana": "banana",

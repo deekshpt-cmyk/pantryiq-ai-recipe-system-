@@ -1,6 +1,6 @@
 import streamlit as st
-from detect import detect_ingredients
-from recipe_engine import recommend
+from ai.detect import detect_ingredients
+from ai.recipe_engine import recommend
 from chatbot import gen_z_chat
 from PIL import Image
 
@@ -50,10 +50,14 @@ if uploaded:
             st.write(user_input)
         
         # Get bot response
-        bot_response = gen_z_chat(user_input, st.session_state.chat_history)
-        st.session_state.chat_history.append({"role": "assistant", "content": bot_response})
-        
-        with st.chat_message("assistant"):
-            st.write(bot_response)
-        
-        st.rerun()
+        try:
+            bot_response = gen_z_chat(user_input, st.session_state.chat_history)
+            st.session_state.chat_history.append({"role": "assistant", "content": bot_response})
+            
+            with st.chat_message("assistant"):
+                st.write(bot_response)
+        except Exception as e:
+            st.error(f"Error getting response: {e}")
+            # Remove the failed message
+            if st.session_state.chat_history and st.session_state.chat_history[-1]["role"] == "user":
+                st.session_state.chat_history.pop()

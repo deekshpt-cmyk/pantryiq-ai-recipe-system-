@@ -7,7 +7,7 @@ try:
 except ImportError:
     pass
 
-from recipe_engine import recommend
+from ai.recipe_engine import recommend
 
 # Gen-Z slang and meme responses
 GEN_Z_RESPONSES = {
