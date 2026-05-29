@@ -136,12 +136,45 @@ pantryiq-ai-recipe-system/
 - **Responsive Design**: Works seamlessly on desktop and mobile
 - **Error Handling**: Robust error management for API calls and model inference
 
-## 📝 Example Output
+## � Screenshots & Results
 
-When you upload an image with ingredients, the system will:
-1. Detect: "Tomato, Garlic, Onion, Basil detected (95% confidence)"
-2. Recommend: Suggest Italian Pasta, Soup, Curry recipes
-3. Chat: "Yo, with those ingredients you could make some fire Italian dishes! 🔥"
+### Application Interface
+The Mise AI Kitchen Intelligence interface with ingredient detection and chatbot:
+
+![PantryIQ Application](temp.jpg)
+
+### System Output Example
+
+**Input**: Upload an image with ingredients
+```
+User uploads: Photo with tomato, lettuce, onion, garlic, and basil
+```
+
+**Detection Output**:
+```
+🔍 Detected Ingredients (with confidence scores):
+  • Tomato: 98.5%
+  • Lettuce: 96.2%
+  • Onion: 94.8%
+  • Garlic: 92.1%
+  • Basil: 89.7%
+```
+
+**Recipe Recommendations**:
+```
+🍲 Top Recipe Matches:
+  1. Italian Bruschetta (Match: 85%)
+  2. Fresh Garden Salad (Match: 78%)
+  3. Tomato Soup (Match: 81%)
+  4. Italian Pasta (Match: 72%)
+```
+
+**Chatbot Response** (Gen-Z style):
+```
+"Yo! 🔥 With those fresh ingredients you can literally make the most fire 
+Italian dishes! Bruschetta would hit different right now, fr fr. You could 
+also go for a fresh salad or creamy tomato soup - no cap! 💯"
+```
 
 ## 🔧 Configuration
 
@@ -159,17 +192,6 @@ OPENAI_API_KEY=your_api_key_here
 - [ ] Mobile app version
 - [ ] User recipe history/favorites
 
-## 📸 Screenshots
-
-[Add screenshots of your app interface here]
-
-## 🤝 Contributing
-
-Feel free to fork, modify, and submit pull requests!
-
-## 📄 License
-
-This project is open source and available under the MIT License.
 
 ## 👨‍💼 Author
 
@@ -181,4 +203,3 @@ Created as an AI recipe recommendation system showcasing:
 
 ---
 
-**Built with ❤️ using Python, AI, and creativity**
